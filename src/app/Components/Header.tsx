@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import { url } from "inspector";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-
+import Link from "next/link";
 
 export default function Home() {
   let studentPosition = [
@@ -11,7 +11,7 @@ export default function Home() {
       fName: "Father Name : Ali Khan",
       cnic: "CNIC : 45504-4826016-6",
       regNumber: "Reg Number : 638462",
-      dateofReg: "Date of Reg : 4/8/2023", 
+      dateofReg: "Date of Reg : 4/8/2023",
       stuImage: "/images/download.jpeg",
     },
     {
@@ -75,55 +75,10 @@ export default function Home() {
     },
   ];
 
-  let programmingCards = [
-    {
-      coursesName: "Programming Fundamentals",
-      courceImage: "/images/programming.jpg",
-    },
-    {
-      coursesName: "Web2 Using NextJS",
-      courceImage: "/images/web2.jpg",
-    },
-    {
-      coursesName: "Earn as You Learn",
-      courceImage: "/images/earnas.jpg",
-    },
-  ];
-
-  let advanceCourses = [
-    {
-      coursesName: "Artifical Intelligence",
-      coursesImage: "/images/artifical.jpg",
-    },
-    {
-      coursesName: "Web 3 and Metaverse",
-      coursesImage: "/images/web3.jpg",
-    },
-    {
-      coursesName: "Cloud-Native Computing",
-      coursesImage: "/images/cloud.jpg",
-    },
-    {
-      coursesName: "Ambient Computing and IoT",
-      coursesImage: "/images/ambient.jpg",
-    },
-  ];
-
-  let genomicsNetwork = [
-    {
-      coursesName: "Genomics and Bioinformatics",
-      coursesImage: "/images/genomics.jpg",
-    },
-    {
-      coursesName: "Network Programmability and Automation",
-      coursesImage: "/images/Network.jpg",
-    },
-  ];
-
-  const router = useRouter()
-  const openLink = ()=> {
-    router.push("/Apply")
-  }
+  const router = useRouter();
+  const openLink = () => {
+    router.push("/Apply");
+  };
 
   return (
     <div>
@@ -144,7 +99,10 @@ export default function Home() {
               Now admissions are open in Hyderabad
             </p>
             <div className="flex items-center justify-between">
-              <button onClick={openLink} className="py-4 px-14 bg-[#044E83] rounded-md mt-4 text-[18px] font-bold   ">
+              <button
+                onClick={openLink}
+                className="py-4 px-14 bg-[#044E83] rounded-md mt-4 text-[18px] font-bold   "
+              >
                 Apply Now
               </button>
               <div>
@@ -185,7 +143,7 @@ export default function Home() {
             model and work independently and will not need to hire employees or
             other team members.
           </p>
-          <div className="flex justify-between px-10 mt-8">
+          <div className="flex justify-between px-10 mt-8 ">
             <Image
               className="rounded-md"
               src={"/images/laptop.jpg"}
@@ -228,79 +186,160 @@ export default function Home() {
             style={{ width: "49%", height: "90%" }}
           />
         </div>
-
+        {/* This is Courese Image */}
         <div className="w-full px-6">
           <h1 className="font-bold text-[30px] text-[#044E83] mb-10">
             Core Courses Sequence
           </h1>
           <div className="flex gap-4">
-            {programmingCards.map((item, i) => (
-              <div
-                key={i}
-                className="w-[300px] h-[300px] bg-slate-200 cursor-pointer mb-5 shadow-md transition duration-300 hover:shadow-2xl"
-              >
+            <div className="w-[300px] h-[300px] bg-slate-200 cursor-pointer mb-5 shadow-md transition duration-300 hover:shadow-2xl">
+              <Link href={"/ProgrammingFundamentals"}>
                 <Image
                   className="rounded-tl-lg rounded-tr-lg"
-                  src={item.courceImage}
+                  src={"/images/programming.jpg"}
                   alt="programming image"
                   width={400}
                   height={400}
                 />
-                <h1 className="text-black text-center mt-10 font-bold">
-                  {item.coursesName}
+                <h1 className="text-zinc-700 text-center mt-10 font-bold">
+                  Programming Fundamentals
                 </h1>
-              </div>
-            ))}
+              </Link>
+            </div>
+
+            <div className="w-[300px] h-[300px] bg-slate-200 cursor-pointer mb-5 shadow-md transition duration-300 hover:shadow-2xl">
+              <Link href={"/Webusingmetaverse"}>
+                <Image
+                  className="rounded-tl-lg rounded-tr-lg"
+                  src={"/images/Web2.jpg"}
+                  alt="Web2 using NextJS"
+                  width={400}
+                  height={400}
+                />
+                <h1 className="text-zinc-700 text-center mt-10 font-bold">
+                  Web2 using NextJS
+                </h1>
+              </Link>
+            </div>
+
+            <div className="w-[300px] h-[300px] bg-slate-200 cursor-pointer mb-5 shadow-md transition duration-300 hover:shadow-2xl">
+              <Link href={"/Earnyoulearn"}>
+                <Image
+                  className="rounded-tl-lg rounded-tr-lg"
+                  src={"/images/earnas.jpg"}
+                  alt="Earn as You Learn"
+                  width={400}
+                  height={400}
+                />
+                <h1 className="text-zinc-700 text-center mt-10 font-bold">
+                  Earn as You Learn
+                </h1>
+              </Link>
+            </div>
           </div>
         </div>
-
+        {/* This is Advance Images */}
         <div className="w-full px-6 mt-10">
           <h1 className="font-bold text-[30px] text-[#044E83] mb-10 ">
             Advanced Courses
           </h1>
           <div className="flex gap-4">
-            {advanceCourses.map((item, i) => (
-              <div
-                key={i}
-                className="w-[300px] h-[300px] bg-slate-200 cursor-pointer mb-5 shadow-md transition duration-300 hover:shadow-2xl"
-              >
+            <div className="w-[300px] h-[300px] text-zinc-700 bg-slate-200 cursor-pointer mb-5 shadow-md transition duration-300 hover:shadow-2xl">
+              <Link href={"/Artificialint"}>
                 <Image
                   className="rounded-tl-lg rounded-tr-lg"
-                  src={item.coursesImage}
-                  alt="Advance Cources"
+                  src={"/images/Artifical.jpg"}
+                  alt="Artificial Intelligence"
                   width={400}
                   height={400}
                 />
-                <h1 className="font-bold text-center mt-10">
-                  {item.coursesName}
-                </h1>
-              </div>
-            ))}
+              </Link>
+              <h1 className="font-bold text-center mt-10">
+                Artificial Intelligence
+              </h1>
+            </div>
+
+            <div className="w-[300px] h-[300px] text-zinc-700 bg-slate-200 cursor-pointer mb-5 shadow-md transition duration-300 hover:shadow-2xl">
+              <Link href={"/Webandmetaverse"}>
+                <Image
+                  className="rounded-tl-lg rounded-tr-lg"
+                  src={"/images/Web3.jpg"}
+                  alt="Cloud-Native Computing"
+                  width={400}
+                  height={400}
+                />
+              </Link>
+              <h1 className="font-bold text-center mt-10">
+                Web3 and Metaverse
+              </h1>
+            </div>
+
+            <div className="w-[300px] h-[300px] text-zinc-700 bg-slate-200 cursor-pointer mb-5 shadow-md transition duration-300 hover:shadow-2xl">
+              <Link href={"/Cloudnative"}>
+                <Image
+                  className="rounded-tl-lg rounded-tr-lg"
+                  src={"/images/cloud.jpg"}
+                  alt="Ambient Computing and IoT"
+                  width={400}
+                  height={400}
+                />
+              </Link>
+              <h1 className="font-bold text-center mt-10">
+                Cloud-Native Computing
+              </h1>
+            </div>
+
+            <div className="w-[300px] h-[300px] text-zinc-700 bg-slate-200 cursor-pointer mb-5 shadow-md transition duration-300 hover:shadow-2xl">
+              <Link href={"/Ambientcomputing"}>
+                <Image
+                  className="rounded-tl-lg rounded-tr-lg"
+                  src={"/images/ambient.jpg"}
+                  alt="Ambient Computing and IoT"
+                  width={400}
+                  height={400}
+                />
+              </Link>
+              <h1 className="font-bold text-center mt-10">
+                Ambient Computing and IoT
+              </h1>
+            </div>
           </div>
         </div>
 
         <div className="w-full px-6 mt-10">
           <div className="flex gap-4">
-            {genomicsNetwork.map((item, i) => (
-              <div
-                key={i}
-                className="w-[300px] h-[300px] bg-slate-200 cursor-pointer mb-5 shadow-md transition duration-300 hover:shadow-2xl"
-              >
+            <div className="w-[300px] h-[300px] text-zinc-700 bg-slate-200 cursor-pointer mb-5 shadow-md transition duration-300 hover:shadow-2xl">
+              <Link href={"/Genomics"}>
                 <Image
                   className="rounded-tl-lg rounded-tr-lg"
-                  src={item.coursesImage}
-                  alt="Advance Cources"
+                  src={"/images/genomics.jpg"}
+                  alt="Genomics and Bioinfomatics"
                   width={400}
                   height={400}
                 />
                 <h1 className="font-bold text-center mt-10">
-                  {item.coursesName}
+                  Genomics and Bioinfomatics
                 </h1>
-              </div>
-            ))}
+              </Link>
+            </div>
+
+            <div className="w-[300px] h-[300px] text-zinc-700 bg-slate-200 cursor-pointer mb-5 shadow-md transition duration-300 hover:shadow-2xl">
+              <Link href={"/Networkprogrammability"}>
+                <Image
+                  className="rounded-tl-lg rounded-tr-lg"
+                  src={"/images/network.jpg"}
+                  alt="Network Programmability and Automation"
+                  width={400}
+                  height={400}
+                />
+                <h1 className="font-bold text-center mt-10">
+                  Network Programmability and Automation
+                </h1>
+              </Link>
+            </div>
           </div>
         </div>
-
+        {/* This is Toper Images */}
         <div className="w-full text-center text-[40px] font-extrabold text-[#044E83] mt-32 mb-5 flex items-center justify-center">
           <h1>These All Are Position Holders.</h1>
           <Image

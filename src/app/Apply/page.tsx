@@ -24,21 +24,10 @@ const Apply = () => {
       </div>
       <div className="flex items-center justify-center mt-10 space-x-2 mb-14">
         <h1 className="text-[19px] font-bold">Already applied?</h1>
-        <Link className="text-blue-600 text-[19px] underline   " href="#"> Get Admit Card</Link>
+        <Link className="text-blue-600 text-[19px] underline" href="#"> Get Admit Card</Link>
       </div>
     </div>
     </div>
-
-    {/* <div>
-      <div className="flex items-center justify-center text-[20px] text-[#044E83] space-x-2">
-        <h3 className="font-bold p-[7px] rounded-[100%] border-2 border-[#044E83]">1</h3>
-        <p className="text-[18px] font-bold">Facebook</p>
-      </div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div> */}
     </>
   );
 };
